@@ -2,57 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 #define Data_size 100
-struct Vehicle
-{
-    char registration_no[50];
-    char vehicle_type[20];
-    char maker[20];
-    char engine_no[20];
-    int mf_year;
-    int price;
-    int Owners_ID;
-};
-struct Owner
-{
-    int Owners_ID;
-    char Owner_name[20];
-    char Father_name[20];
-    char Address[50];
-    int purchase_date[5];
-    int purchase_month[5];
-    int purchase_year[5];
-    double purchase_amount[5];
-    struct Vehicle Total_vehicles[5];
-    int num_vehicles;    
-};
-//Start of first Question
-int add_owner(struct Owner * O, int * current_owner) 
-{
-    int t,i,f=0;
-    printf("Enter ID of new owner: ");
-    scanf("%d", &t);
 
-    for(i=0; i<Data_size; i++)
-    {
-        if(O[i].Owners_ID == t)
-        {
-            printf("Owner with given ID already exists");
-            f=1;
-        }
-    }
-    if (f == 0)
-    {
-        O[*current_owner].Owners_ID = t;
-        printf("Enter name of Owner: ");
-        scanf("%s", O[*current_owner].Owner_name);
-        printf("Enter name of Owner's Father's : ");
-        scanf("%s", O[*current_owner].Father_name);
-        printf("Enter Address of Owner: ");
-        scanf("%s", O[*current_owner].Address);
-
-        O[*current_owner].num_vehicles=0;
-        printf("Added new owner successfully with ID %d \n", O[*current_owner].Owners_ID);
-    }
     *current_owner++;
     return f;
 }//End of first Question.
