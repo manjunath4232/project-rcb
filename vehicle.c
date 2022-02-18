@@ -3,24 +3,7 @@
 #include<stdlib.h>
 #define Data_size 100
 
-    *current_owner++;
-    return f;
-}//End of first Question.
-//Start of second Question
-int Add_Vehicle(struct Owner * O) 
-{
-    int id, i, f=1;
-    printf("Enter ID of Owner: ");
-    scanf("%d", &id);
-
-    for(i=0;i<Data_size;i++)
-    {
-        if(O[i].Owners_ID == id)
-        {
-            if(O[i].num_vehicles>4)
-            {
-                printf("User with ID %d already had 5 vehicles\n", O[i].Owners_ID);
-            }
+   
             else
             {   
                 int current_vehicle = O[i].num_vehicles;
